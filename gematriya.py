@@ -6,6 +6,7 @@
 
 from string import lowercase as alphabet
 from collections import defaultdict
+from operator import mul
 import sys
 
 def gematriya(word):
@@ -39,3 +40,4 @@ if __name__ == '__main__':
     global dictionary
     dictionary = [line[:-1] for line in open('/usr/share/dict/words')]
     count_all_gematriya()
+    print reduce(mul, (count_phrases_adding_up_to(n, 3) for n in (96,98,100,101)))
