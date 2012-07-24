@@ -32,7 +32,7 @@ def count_phrases_adding_up_to(total, num_words):
         return memo_table[total, num_words]
     answer = sum(count_phrases_adding_up_to(subtotal, num_words - 1) *
                 count_phrases_adding_up_to(total - subtotal, 1)
-                  for subtotal in xrange(total + 1))
+                  for subtotal in xrange(total))
     memo_table[total,num_words] = answer
     return answer
 
